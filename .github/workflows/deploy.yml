@@ -20,12 +20,7 @@ jobs:
 
     - name: Deploy to VPS
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-          docker rm -f streamlit-app || true
-          docker rmi streamlit-app || true
-          mkdir -p /root/streamlit-app
-          exit
-EOF
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "docker rm -f streamlit-app || true && docker rmi streamlit-app || true && mkdir -p /root/streamlit-app"
 
     - name: Copy Files to VPS
       run: |
@@ -33,8 +28,4 @@ EOF
 
     - name: Run Docker Container
       run: |
-        ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
-          cd /root/streamlit-app
-          docker build -t streamlit-app .
-          docker run -d -p 8501:8501 --name streamlit-app streamlit-app
-EOF
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd /root/streamlit-app && docker build -t streamlit-app . && docker run -d -p 8501:8501 --name streamlit-app streamlit-app"
