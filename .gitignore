@@ -29,3 +29,9 @@ archive/
 
 # Jupyter notebook checkpoints
 .ip
+
+venv/
+__pycache__/
+*.pyc
+*.h5
+.env
