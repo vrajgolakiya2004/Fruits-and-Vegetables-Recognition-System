@@ -1,0 +1,31 @@
+# Virtual environment
+venv/
+venv310/
+.env/
+.venv/
+
+Fruits_and_Vegetable_Recognition_Training_fruit_vegetable.ipynb
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.pickle
+
+# TensorFlow / Keras model files
+*.h5
+*.hdf5
+*.ckpt
+*.pb
+
+# Dataset / large files
+archive/
+*.zip
+*.tar
+*.gz
+
+# Jupyter notebook checkpoints
+.ip
