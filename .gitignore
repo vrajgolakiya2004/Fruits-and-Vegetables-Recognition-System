@@ -16,8 +16,6 @@ __pycache__/
 *.pickle
 
 # TensorFlow / Keras model files
-*.h5
-*.hdf5
 *.ckpt
 *.pb
 
@@ -33,5 +31,4 @@ archive/
 venv/
 __pycache__/
 *.pyc
-*.h5
 .env
