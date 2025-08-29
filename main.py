@@ -5,6 +5,8 @@ import tempfile
 import os
 
 
+print("Hello World!")
+
 # Tensorflow Model Prediction
 def model_prediction(test_image):
     model = tf.keras.models.load_model(
@@ -20,6 +22,7 @@ def model_prediction(test_image):
 # Sidebar
 st.sidebar.title("Dashboard")
 app_mode = st.sidebar.selectbox("Select Page", ["Home", "About Project", "Prediction"])
+
 
 # Main Page
 if app_mode == "Home":
@@ -76,3 +79,4 @@ elif app_mode == "Prediction":
 
             label = [i.strip() for i in content]
             st.success(f"Model is Predicting it's a **{label[result_index]}**")
+
