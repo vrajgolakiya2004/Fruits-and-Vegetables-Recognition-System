@@ -4,9 +4,6 @@ import numpy as np
 import tempfile
 import os
 
-
-print("Hello World!")
-
 # Tensorflow Model Prediction
 def model_prediction(test_image):
     model = tf.keras.models.load_model(
